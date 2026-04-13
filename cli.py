@@ -1,4 +1,8 @@
 import functions
+import time
+
+now = time.strftime("%b %d, %Y %H:%M:%S")
+print("It is", now)
 
 while True:
     user_input = input("Enter add, show, edit, complete or exit: ")
@@ -31,7 +35,7 @@ while True:
             todos = functions.get_todo()
 
 
-            edit_todo = input("Enter a new Todo: ")
+            edit_todo = input("Enter a new To-do: ")
             todos[number] = edit_todo + '\n'
 
             functions.write_todos(todos)
@@ -57,7 +61,7 @@ while True:
             print(message)
 
         except IndexError:
-            print("There is no Todo with that number")
+            print("There is no To-do with that number")
             continue
         
     elif user_input.startswith("exit"):
